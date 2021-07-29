@@ -1,0 +1,70 @@
+    body {
+        background-color: dimgray;
+    }
+    
+    #center {
+        align-items: center;
+        margin-right: 200px;
+        margin-left: 200px;
+        border: solid 1px black;
+    }
+    
+    .cadastro {
+        background-color: rgba(233, 205, 44, 0.938);
+        border: solid 1px black;
+    }
+    
+    .login {
+        background-color: rgba(233, 205, 44, 0.938);
+        margin-top: 1px;
+        border: solid 1px black;
+    }
+    
+    input {
+        background-color: greenyellow;
+        color: black;
+    }
+    
+    button {
+        background-color: greenyellow;
+        margin-top: 4px;
+    }
+    
+    form {
+        border: solid 1px black;
+    }
+    
+    fieldset {
+        border: solid 1px black;
+    }
+    
+    h1 {
+        text-align: center;
+    }
+    
+    p {
+        text-align: center;
+        font-size: 20px;
+    }
+    
+    img {
+        height: 150px;
+        width: 140px;
+        margin-top: 50px;
+        margin-left: 20px;
+    }
+    
+    #image {
+        display: flex;
+        white-space: pre;
+    }
+    
+    #articli {
+        margin-top: -100px;
+        margin-bottom: -15px;
+    }
+    
+    #main {
+        background-color: rgba(255, 255, 0, 0.541);
+        border: solid 1px black;
+    }
