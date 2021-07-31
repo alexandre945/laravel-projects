@@ -21,3 +21,10 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/list', [LisstController::class, 'index'])->name('list.index');
 Route::post('/list/store', [LisstController::class, 'store'])->name('list.store');
+Route::delete('/list/delet/{id}', [LisstController::class,'destroy'])->name('list.destroy');
+Route::get('/edit/{id}', [LisstController::class, 'edit'])->name('list.edit');
+route::put('/list/pdate/{id}', [LisstController::class,'update'])->name("list.update");
+
+
+
+

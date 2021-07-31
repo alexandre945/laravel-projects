@@ -3,16 +3,21 @@
 @section('title', 'new_Lister')
 
 @section('content_header')
-    <h1 class="text-center">Lister</h1>
+<div class="conteudo">
+    <h1 class="text-center">Bem vindo a sua lista de Compras</h1>
 @stop
 
 @section('content')
     <div class="text-center">
         <form action="{{route('list.store')}}" method="post">
             @csrf
-            <h1>Lista de compra</h1>
-            <input id="newtask" name="name" type="text"/>
-            <input name="quantidade" type="number"/>
+
+           <div id="paragraf">
+               <p>Digite-produtos</p>
+               <p>Digite-Quatidade</p>
+           </div>
+            <input class="btn btn-primary"id="newtask" name="name" type="text" placeholder="Digite-Seu-Produto"/>
+            <input class="btn btn-primary"name="quantidade" type="number" placeholder="Digite-A-Quantidade"/>
             <button class="btn btn-dark" onclick createList()>Incluir</button>
         </form>
     </div>
@@ -36,8 +41,16 @@
                         <td> {{ $item->quantidade }} </td>
                         <td> {{ $item->user->name }} </td>
                         <td>
-                        <button id="excluir"class="btn btn-danger">Excluir</button>
-                        <button id="update"class="btn btn-success">update</button>
+                            <div class="button">
+                                <form action="{{ route('list.destroy',$item->id)}}"  method="post">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button id="excluir"class="btn btn-danger">Excluir</button>
+                                </form>
+                           <a href="{{ route('list.edit', $item->id) }}"><button id="update"class="btn btn-success">Edit</button></a>
+
+                            </div>
+
                         </td>
                     </tr>
                 @endforeach
@@ -49,23 +62,58 @@
 @endif
 @stop
 
+</div>
+
+
 @section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
+
     <style>
       body {
 
           backgroud-color: rgb(245, 69, 16);
       }
-      input {
-          background-color: aqua;
-      }
+
       button {
           margin-left: 10PX;
 
       }
-      #excluir,update {
+      #excluir, {
          margin-right: 0px;
 
+      }
+      #paragraf {
+          display: flex;
+          margin-left: 300px;
+      }
+      p {
+          margin-left: 50px;
+      }
+      .button {
+          display: flex;
+          margin-left: 20px;
+      }
+      @media (max-width:600px)
+      {
+      .conteudo {
+          width:300px;
+          height: 80px;
+      }
+      .table table-sm {
+          margin-left: 0;
+      }
+      input {
+          width: 80px;
+      }
+
+      tr {
+          width: 50px;
+      }
+      .button {
+          margin-left: 50px;
+      }
+      .paragraf {
+          display: none;
+      }
       }
     </style>
 @stop

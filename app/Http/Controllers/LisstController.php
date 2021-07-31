@@ -61,9 +61,10 @@ class LisstController extends Controller
      * @param  \App\Models\lisst  $lisst
      * @return \Illuminate\Http\Response
      */
-    public function edit(lisst $lisst)
+    public function edit($id, lisst $lisst)
     {
-        //
+        $data = $lisst->find($id);
+        return view('update', compact('data'));
     }
 
     /**
@@ -73,9 +74,11 @@ class LisstController extends Controller
      * @param  \App\Models\lisst  $lisst
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, lisst $lisst)
+    public function update($id, Request $request, lisst $lisst)
     {
-        //
+        $update = $lisst->find($id);
+        $update->update($request->all());
+        return redirect()->route('list.index');
     }
 
     /**
@@ -84,8 +87,10 @@ class LisstController extends Controller
      * @param  \App\Models\lisst  $lisst
      * @return \Illuminate\Http\Response
      */
-    public function destroy(lisst $lisst)
+    public function destroy($id, lisst $lisst)
     {
-        //
+       $list = $lisst->find($id);
+       $list->delete();
+       return redirect()->route('list.index');
     }
 }
