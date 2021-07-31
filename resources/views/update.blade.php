@@ -8,16 +8,34 @@
     <title>update</title>
 </head>
 <body>
-    <Form action="{{ route('list.update', $data->id) }}" method="post">
-        @method('PUT')
-        @csrf
-        <div class="text-center">
-            <input class="btn btn-primary"type="text" name="name" value="{{ $data->name }}"/>
-            <input class="btn btn-primary"type="text" name="quantidade" value="{{ $data->quantidade }}"/>
-            <button class="btn btn-primary" type="submit">Concluir</button>
-        </div>
+    <div class="controller">
+        <Form action="{{ route('list.update', $data->id) }}" method="post">
+            @method('PUT')
+            @csrf
+            <div class="text-center">
+                <input class="btn btn-primary"type="text" name="name" value="{{ $data->name }}"/>
+                <input class="btn btn-primary"type="text" name="quantidade" value="{{ $data->quantidade }}"/>
+                <button class="btn btn-primary" type="submit">Concluir</button>
+            </div>
 
-    </Form>
+        </Form>
+
+    </div>
+
 
 </body>
+<style>
+
+    input {
+        margin-left: 250px;
+        margin-top: 100px;
+        background-color: aquamarine;
+    }
+    .controller {
+        background-color: chocolate;
+        height: 400px;
+
+    }
+
+</style>
 </html>
