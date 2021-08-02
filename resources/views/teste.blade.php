@@ -84,6 +84,7 @@
       #paragraf {
           display: flex;
           margin-left: 300px;
+          
       }
       p {
           margin-left: 50px;
@@ -91,6 +92,11 @@
       .button {
           display: flex;
           margin-left: 20px;
+
+      }
+      .text-center {
+          background-color: rgba(0, 0, 255, 0.377);
+          padding-bottom: 5px;
       }
       @media (max-width:600px)
       {

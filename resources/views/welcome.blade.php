@@ -28,13 +28,12 @@
             }
             .relative{
                 background-color:grey;
-                color: #1a202c;
-                padding-top: 10px;
+                color: hsl(220, 26%, 14%);
+                padding-top: 20px;
 
             }
-            a {
-                color: #cbd5e0;
-            }
+
+
 
 
         </style>
@@ -47,7 +46,7 @@
 
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-30 px-10 py-8 sm:block">
+                <div class="hidden fixed top-0 right-50 px-20 py-8 sm:block">
                     @auth
                         <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
                     @else
