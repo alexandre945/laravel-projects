@@ -37,7 +37,7 @@
                 @foreach ($data as $item)
                     <tr>
                         <td> {{ $item->id }} </td>
-                        <td> {{ $item->name }} </td>
+                        <td> <input type="checkbox">{{ $item->name }} </td>
                         <td> {{ $item->quantidade }} </td>
                         <td> {{ $item->user->name }} </td>
                         <td>
@@ -84,7 +84,7 @@
       #paragraf {
           display: flex;
           margin-left: 300px;
-          
+
       }
       p {
           margin-left: 50px;
