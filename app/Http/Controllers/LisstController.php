@@ -88,6 +88,7 @@ class LisstController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id, lisst $lisst)
+    
     {
        $list = $lisst->find($id);
        $list->delete();
