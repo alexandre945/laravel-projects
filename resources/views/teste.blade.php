@@ -10,16 +10,23 @@
 @section('content')
     <div class="text-center">
         <form action="{{route('list.store')}}" method="post">
-            @csrf
-
-           <div id="paragraf">
+                @csrf
+        <div id="paragraf">
                <p>Digite-produtos</p>
                <p>Digite-Quatidade</p>
-           </div>
-            <input class="btn btn-primary"id="newtask" name="name" type="text" placeholder="Digite-Seu-Produto"/>
-            <input class="btn btn-primary"name="quantidade" type="number" placeholder="Digite-A-Quantidade"/>
-            <button class="btn btn-dark" onclick createList()>Incluir</button>
+        </div>
+                <input class="btn btn-dark"id="newtask" name="name" type="text" placeholder="Digite-Seu-Produto"/>
+                <input class="btn btn-dark"name="quantidade" type="number" placeholder="Digite-A-Quantidade"/>
+
+                <button class="btn btn-dark" onclick createList()>CADASTRAR</button>
         </form>
+        <div class="destroy">
+            <form action="{{ route('listtd.destroy') }}"  method="post">
+                @method('DELETE')
+                @csrf
+                <button class="btn btn-danger" onclick createList()>ExcluirTudo</button>
+            </form>
+        </div>
     </div>
 @if(!$data->isEmpty())
     <div class="text-center">
@@ -47,7 +54,7 @@
                                     @csrf
                                     <button id="excluir"class="btn btn-danger">Excluir</button>
                                 </form>
-                           <a href="{{ route('list.edit', $item->id) }}"><button id="update"class="btn btn-success">Edit</button></a>
+                           <a href="{{ route('list.edit',$item->id) }}"><button id="update"class="btn btn-success">Edit</button></a>
 
                             </div>
 
@@ -93,6 +100,10 @@
           display: flex;
           margin-left: 20px;
 
+      }
+      .destroy {
+          margin-left: 700px;
+          margin-top: -52px;
       }
       .text-center {
           background-color: rgba(0, 0, 255, 0.377);
