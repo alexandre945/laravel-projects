@@ -42,6 +42,7 @@
         <div class="text-center">
         <h2>Cadastre-se aqui:</h2>
         <p>Ou faça o login Para ter acesso asua lista de Comprapas</p>
+        <p>Uma aplicação onde vocẽ pode Cadastrar sua lista de afazeres ou de Comprapas</p>
         </div>
 
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
