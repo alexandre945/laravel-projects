@@ -51,7 +51,7 @@
                                     @csrf
                                     <button id="excluir"class="btn btn-danger">Excluir</button>
                                 </form>
-                           <a href="{{ route('list.edit', $item->id) }}"><button id="update"class="btn btn-success">Edit</button></a>
+                                    <a href="{{ route('list.edit', $item->id) }}"><button id="update"class="btn btn-success">Edit</button></a>
 
                             </div>
 
@@ -95,7 +95,7 @@
       }
       .button {
           display: flex;
-          margin-left: 20px;
+          margin-left: 0px;
 
       }
       .text-center {
@@ -107,15 +107,16 @@
       {
       .conteudo {
           width:342px;
-          height: 20px;
+          height: 10px;
           margin-left: -7px;
+
 
       }
       .input {
           padding-left: 15px;
       }
       .text-center {
-          width: 380px;
+          width: 360px;
 
       }
       .table table-sm {
@@ -125,7 +126,12 @@
           width: 60px;
       }
       .button {
-          margin-left: 50px;
+          margin-left: -5px;
+          background-color: rgba(0, 0, 255, 0.377);
+          padding-left: -5px;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          scroll-padding-right: 5px;
       }
       .paragraf{
           display: none;
