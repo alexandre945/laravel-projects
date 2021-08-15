@@ -3,34 +3,31 @@
 @section('title', 'new_Lister')
 
 @section('content_header')
-<div class="conteudo">
+<div class="conteudo container-fluid">
     <h1 class="text-center">Bem vindo a sua lista de Compras</h1>
 @stop
 
 @section('content')
-    <div class="text-center">
+    <div class="text">
         <form action="{{route('list.store')}}" method="post">
-                @csrf
-        <div id="paragraf">
+            @csrf
+
+           <div id="paragraf">
                <p>Digite-produtos</p>
                <p>Digite-Quatidade</p>
-        </div>
+           </div>
+            <div class="input">
                 <input class="btn btn-dark"id="newtask" name="name" type="text" placeholder="Digite-Seu-Produto"/>
                 <input class="btn btn-dark"name="quantidade" type="number" placeholder="Digite-A-Quantidade"/>
+                <button class="btn btn-dark" onclick createList()>Cadastrar</button>
 
-                <button class="btn btn-dark" onclick createList()>CADASTRAR</button>
+            </div>
+
         </form>
-        <div class="destroy">
-            <form action="{{ route('listtd.destroy') }}"  method="post">
-                @method('DELETE')
-                @csrf
-                <button class="btn btn-danger" onclick createList()>ExcluirTudo</button>
-            </form>
-        </div>
     </div>
 @if(!$data->isEmpty())
-    <div class="text-center">
-        <table class="table table-sm">
+    <div class="text-center col-md-12">
+        <table class="table table-sm col-md-12">
             <thead>
             <tr>
                 <th>ID</th>
@@ -54,7 +51,7 @@
                                     @csrf
                                     <button id="excluir"class="btn btn-danger">Excluir</button>
                                 </form>
-                           <a href="{{ route('list.edit',$item->id) }}"><button id="update"class="btn btn-success">Edit</button></a>
+                           <a href="{{ route('list.edit', $item->id) }}"><button id="update"class="btn btn-success">Edit</button></a>
 
                             </div>
 
@@ -101,35 +98,41 @@
           margin-left: 20px;
 
       }
-      .destroy {
-          margin-left: 700px;
-          margin-top: -52px;
-      }
       .text-center {
           background-color: rgba(0, 0, 255, 0.377);
-          padding-bottom: 5px;
+          padding-bottom: 20px;
+
       }
       @media (max-width:600px)
       {
       .conteudo {
-          width:300px;
-          height: 80px;
+          width:342px;
+          height: 20px;
+          margin-left: -7px;
+
+      }
+      .input {
+          padding-left: 15px;
+      }
+      .text-center {
+          width: 380px;
+
       }
       .table table-sm {
-          margin-left: 0;
+          margin-left: -10px;
       }
       input {
-          width: 80px;
-      }
-
-      tr {
-          width: 50px;
+          width: 60px;
       }
       .button {
           margin-left: 50px;
       }
-      .paragraf {
+      .paragraf{
           display: none;
+
+      }
+      body {
+          width: 400px;
       }
       }
     </style>
