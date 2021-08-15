@@ -88,9 +88,22 @@ class LisstController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id, lisst $lisst)
+    
     {
        $list = $lisst->find($id);
        $list->delete();
        return redirect()->route('list.index');
     }
+    public function destroyall(lisst $lisst)
+    {
+
+        $list = $lisst->where('user_id', Auth()->user()->id)->get();
+        foreach ($list as $key => $value) {
+            $value->delete();
+
+        }
+        return redirect()->route('list.index');
+
+    }
+
 }

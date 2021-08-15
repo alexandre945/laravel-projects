@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width, initial-scale=1.0">
@@ -15,10 +15,15 @@
             <div class="text-center">
               <form class="grup-control">
                   <fieldset>
-                    <label>digite-seu-Produto</label>
-                    <input class="btn btn-primary"type="text" name="name" value="{{ $data->name }}"/><br>
-                    <label>digite-a-quantidade</label>
-                    <input class="btn btn-primary"type="number" name="quantidade" value="{{ $data->quantidade }}"/><br>
+                      <div class="label">
+                        <label>digite-seu-Produto</label>
+                        <input class="btn btn-primary"type="text" name="name" value="{{ $data->name }}"/><br>
+                      </div>
+                      <div class="label2">
+                        <label>digite-a-quantidade</label>
+                        <input class="btn btn-primary"type="number" name="quantidade" value="{{ $data->quantidade }}"/><br>
+                      </div>
+
                     <button class="btn btn-primary" type="submit">Concluir</button>
                   </fieldset>
 
@@ -29,14 +34,11 @@
         </Form>
 
     </div>
-
-
 </body>
 <style>
 
     input {
-        margin-left: 250px;
-        margin-top: 100px;
+
         background-color: aquamarine;
         height: 25px;
         width: 100px;
@@ -48,11 +50,23 @@
     .controller {
         background-color: chocolate;
         height: 400px;
+        text-align: center;
     }
     button {
         height: 35px;
         width: 100px;
         background-color: aquamarine;
+        margin-left: 330px;
+
+    }
+    .label {
+        display: flexbox;
+        padding-bottom: 7px;
+    }
+    .label2 {
+        display: flexbox;
+        padding-bottom: 7px;
+
     }
 
 
