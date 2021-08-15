@@ -16,9 +16,9 @@
                <p>Digite-produtos</p>
                <p>Digite-Quatidade</p>
            </div>
-            <input class="btn btn-primary"id="newtask" name="name" type="text" placeholder="Digite-Seu-Produto"/>
-            <input class="btn btn-primary"name="quantidade" type="number" placeholder="Digite-A-Quantidade"/>
-            <button class="btn btn-dark" onclick createList()>Incluir</button>
+            <input class="btn btn-dark"id="newtask" name="name" type="text" placeholder="Digite-Seu-Produto"/>
+            <input class="btn btn-dark"name="quantidade" type="number" placeholder="Digite-A-Quantidade"/>
+            <button class="btn btn-dark" onclick createList()>Cadastrar</button>
         </form>
     </div>
 @if(!$data->isEmpty())
