@@ -12,10 +12,6 @@
         <form action="{{route('list.store')}}" method="post">
             @csrf
 
-           <div id="paragraf">
-               <p>Digite-produtos</p>
-               <p>Digite-Quatidade</p>
-           </div>
             <div class="input">
                 <input class="btn btn-dark"id="newtask" name="name" type="text" placeholder="Digite-Seu-Produto"/>
                 <input class="btn btn-dark"name="quantidade" type="number" placeholder="Digite-A-Quantidade"/>
@@ -78,7 +74,7 @@
       }
 
       button {
-          margin-left: 10PX;
+
 
       }
       #excluir, {
@@ -103,27 +99,39 @@
           padding-bottom: 20px;
 
       }
+      .text {
+        background-color: rgba(0, 0, 255, 0.377);
+        padding-bottom: 10px;
+      }
+      .input {
+         padding-top: 5px;
+         padding-bottom: 0px;
+         justify-content: center;
+         margin-left: 170px;
+
+      }
+
       @media (max-width:600px)
       {
       .conteudo {
           width:342px;
           height: 10px;
-          margin-left: -7px;
-
 
       }
       .input {
-          padding-left: 15px;
+         margin-left: 15px;
+          margin-top: 78px;
       }
       .text-center {
-          width: 360px;
+          width: 340px;
 
       }
       .table table-sm {
-          margin-left: -10px;
+          width: 360px;
       }
       input {
-          width: 60px;
+          width: 100px;
+          padding-top: 5px;
       }
       .button {
           margin-left: -5px;
@@ -131,15 +139,15 @@
           padding-left: -5px;
           padding-top: 5px;
           padding-bottom: 5px;
-          scroll-padding-right: 5px;
+          scroll-padding-right: 5px;b
       }
-      .paragraf{
-          display: none;
+      tbody {
+        background-color: rgba(0, 0, 255, 0.377);
 
       }
-      body {
-          width: 400px;
-      }
+    
+
+
       }
     </style>
 @stop
