@@ -49,7 +49,8 @@
     }
     .controller {
         background-color: chocolate;
-        height: 400px;
+        height: 150px;
+        width: 600px;
         text-align: center;
     }
     button {
@@ -62,12 +63,20 @@
     .label {
         display: flexbox;
         padding-bottom: 7px;
+
     }
     .label2 {
         display: flexbox;
         padding-bottom: 7px;
 
     }
+    .text-center {
+    margin-left: -400px;
+    }
+
+    }
+
+
 
 
 </style>
