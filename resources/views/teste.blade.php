@@ -8,6 +8,7 @@
 @stop
 
 @section('content')
+
     <div class="text">
         <form action="{{route('list.store')}}" method="post">
             @csrf
@@ -109,25 +110,35 @@
          justify-content: center;
          margin-left: 170px;
 
+
+
       }
 
       @media (max-width:600px)
       {
       .conteudo {
-          width:342px;
-          height: 10px;
+          width:340px;
+          height: 12px;
+
 
       }
       .input {
          margin-left: 15px;
           margin-top: 78px;
+          width: 550px;
+
+
       }
       .text-center {
-          width: 340px;
+          width: 548px;
+          padding-bottom: 155px;
+
+
 
       }
       .table table-sm {
           width: 360px;
+
       }
       input {
           width: 100px;
@@ -136,16 +147,11 @@
       .button {
           margin-left: -5px;
           background-color: rgba(0, 0, 255, 0.377);
-          padding-left: -5px;
-          padding-top: 5px;
-          padding-bottom: 5px;
-          scroll-padding-right: 5px;b
-      }
-      tbody {
-        background-color: rgba(0, 0, 255, 0.377);
+          padding-top: 10px;
+          padding-bottom: 0px;
 
       }
-    
+
 
 
       }
