@@ -14,8 +14,8 @@
             @csrf
 
             <div class="input">
-                <input class="btn btn-dark"id="newtask" name="name" type="text" placeholder="Digite-Seu-Produto"/>
-                <input class="btn btn-dark"name="quantidade" type="number" placeholder="Digite-A-Quantidade"/>
+                <input class="btn btn-dark"id="newtask" name="name" type="text" placeholder="-Produto"/>
+                <input class="btn btn-dark"name="quantidade" type="number" placeholder="-Quantidade"/>
                 <button class="btn btn-dark" onclick createList()>Cadastrar</button>
 
             </div>
