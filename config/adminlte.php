@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'new_Lister',
+    'title' => 'New_Lister',
     'title_prefix' => '',
     'title_postfix' => '',
 
