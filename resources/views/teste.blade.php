@@ -3,7 +3,7 @@
 @section('title', 'new_Lister')
 
 @section('content_header')
-<div class="card">
+
     <div class="conteudo container-fluid">
         <h1 class="text-center">Bem vindo a sua lista de Compras</h1>
     @stop
@@ -24,9 +24,10 @@
             </form>
         </div>
     @if(!$data->isEmpty())
+
+      <div class="card">
         <div class="text-center col-md-12">
             <table class="table table-sm col-md-12">
-                <div class="card-header">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -50,29 +51,24 @@
                                                 @csrf
                                                 <button id="excluir"class="btn btn-danger">Excluir</button>
                                             </form>
-                                                <a href="{{ route('list.edit', $item->id) }}"><button id="update"class="btn btn-success">Edit</button></a>
-
-                </div>
-
-
+                                                <a href="{{ route('list.edit', $item->id) }}"><button id="update"class="btn btn-success">
+                                                Edit</button></a>
                                 </div>
-
                             </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
+      </div>
+
+
+
     @else
         <h1>Não Existe registro de lista</h1>
     @endif
     @stop
-
-
     </div>
-
-</div>
-
 
 
 @section('css')
