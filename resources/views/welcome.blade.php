@@ -27,43 +27,46 @@
             .relative{
 
                 color: hsl(220, 26%, 14%);
+                background-color: #4e5157;
                 padding-top: 20px;
 
-            }
-
-            .relative {
 
             }
-            .hidden {
 
-            }
+           .card {
+               margin-top: 30px;
+               background-color: #4e5157;
+           }
 
         </style>
     </head>
     <body>
-        <div class="row align-items-center justify-content-center ">
-            <div class="text-center">
-                <h2>Cadastre-se aqui:</h2>
-                <p>Ou faça o login Para ter acesso asua lista de Comprapas</p>
-                </div>
+        <div class="card">
+            <div class="row align-items-center justify-content-center ">
+                <div class="text-center">
+                    <h2>Cadastre-se aqui:</h2>
+                    <p>Ou faça o login Para ter acesso asua lista de Comprapas</p>
+                    </div>
 
-                <div class="relative flex  justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-                    @if (Route::has('login'))
-                        <div class="hidden fixed top-0 right-100 px-20 py-8 sm:block">
-                            @auth
-                                <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
-                            @else
-                                <a href="{{ route('login') }}" class="ml-4 text-sm text-gray-1200 ">Log in</a>
+                    <div class="relative flex  justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+                        @if (Route::has('login'))
+                            <div class=" right-100 px-20 py-8 sm:block">
+                                @auth
+                                    <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
+                                @else
+                                    <a href="{{ route('login') }}" class="ml-4 text-sm text-gray-1200 ">Log in</a>
 
-                                @if (Route::has('register'))
-                                    <a  href="{{ route('register') }}" class="ml-4 text-sm text-gray-1200 ">Registre-se</a>
-                                @endif
-                            @endauth
-                        </div>
-                    @endif
-                </div>
+                                    @if (Route::has('register'))
+                                        <a  href="{{ route('register') }}" class="ml-4 text-sm text-gray-1200 ">Registre-se</a>
+                                    @endif
+                                @endauth
+                            </div>
+                        @endif
+                    </div>
 
+            </div>
         </div>
+
 
     </body>
 </html>
