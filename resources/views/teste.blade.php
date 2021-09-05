@@ -4,13 +4,13 @@
 
 @section('content_header')
 
-    <div class="conteudo container-fluid">
+    <div class="card">
         <h1 class="text-center">Bem vindo a sua lista de Compras</h1>
     @stop
 
     @section('content')
 
-        <div class="text">
+        <div class="card-body">
             <form action="{{route('list.store')}}" method="post">
                 @csrf
 
@@ -61,9 +61,9 @@
             </table>
         </div>
       </div>
-
-
-
+      <div class="car-footer">
+        Desenvolvido por XandyDesenvolvimentoweb:35 9 98464219
+      </div>
     @else
         <h1>Não Existe registro de lista</h1>
     @endif
@@ -105,7 +105,11 @@
           padding-bottom: 20px;
 
       }
-      .text {
+      .car-footer {
+          background-color:  rgba(0, 0, 255, 0.377);
+          padding: 10px;
+      }
+      .card-body {
         background-color: rgba(0, 0, 255, 0.377);
         padding-bottom: 10px;
       }
@@ -128,18 +132,19 @@
 
       }
       .input {
-         margin-left: 15px;
-          margin-top: 78px;
-          width: 550px;
-
-
+        width: 548px;
+         margin-left: 60px;
       }
       .text-center {
           width: 548px;
-          padding-bottom: 155px;
+          padding-bottom: 20px;
+          padding-top: 20px;
 
 
 
+      }
+      .card-body{
+        width: 548px;
       }
       .table table-sm {
           width: 360px;
