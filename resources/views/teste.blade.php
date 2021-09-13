@@ -62,11 +62,17 @@
         </div>
       </div>
       <div class="car-footer">
-        Desenvolvido por XandyDesenvolvimentoweb:35 9 98464219
+        <p>Desenvolvido por XandyDesenvolvimentoweb: (35)-998464219</p>
       </div>
-    @else
-        <h1>Não Existe registro de lista</h1>
-    @endif
+
+      
+            @else
+            <div class = "btn btn-warning">
+                <p>AINDA NÃO EXISTE NEN UM CADASTADRO NA SUA LISTA</p>
+            </div>
+             @endif
+       
+       
     @stop
     </div>
 
