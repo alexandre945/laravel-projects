@@ -27,15 +27,13 @@
             .relative{
 
                 color: hsl(220, 26%, 14%);
-                background-color: #4e5157;
-                padding-top: 20px;
-
-
+                padding-top: 10px;
+                margin-top: 20px;
             }
 
            .card {
                margin-top: 30px;
-               background-color: #4e5157;
+              
            }
 
         </style>
@@ -48,9 +46,9 @@
                     <p>Ou faça o login Para ter acesso asua lista de Comprapas</p>
                     </div>
 
-                    <div class="relative flex  justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+                    <div class="relative flex  justify-center bg-gray-100 dark:bg-gray-700 sm:items-center py-4 sm:pt-0">
                         @if (Route::has('login'))
-                            <div class=" right-100 px-20 py-8 sm:block">
+                            <div class=" right-100 px-10 py-8 sm:block">
                                 @auth
                                     <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
                                 @else

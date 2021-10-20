@@ -11,12 +11,21 @@
     @section('content')
 
         <div class="card-body">
+           
+            @if ($errors->any())
+                <div class="btn btn-warning">
+                    @foreach ($errors->all() as $error)
+                    <p> {{ $error}}</p>
+                    @endforeach
+                </div>
+            @endif
+
             <form action="{{route('list.store')}}" method="post">
                 @csrf
 
                 <div class="input">
-                    <input class="btn btn-dark"id="newtask" name="name" type="text" placeholder="-Produto"/>
-                    <input class="btn btn-dark"name="quantidade" type="number" placeholder="-Quantidade"/>
+                    <input class="btn btn-dark"id="newtask" name="name" type="text" placeholder="-Produto" value="{{ old('name') }}"/>
+                    <input class="btn btn-dark"name="quantidade" type="number" placeholder="-Quantidade" value=" {{ old('quantidade')}}"/>
                     <button class="btn btn-dark" onclick createList()>Cadastrar</button>
 
                 </div>
@@ -41,7 +50,7 @@
                             @foreach ($data as $item)
                                 <tr>
                                     <td> {{ $item->id }} </td>
-                                    <td> <input type="checkbox">{{ $item->name }} </td>
+                                    <td> <input type="checkbox" value="{{ $item->name }}">{{ $item->name }} </td>
                                     <td> {{ $item->quantidade }} </td>
                                     <td> {{ $item->user->name }} </td>
                                     <td>
@@ -114,10 +123,12 @@
       .car-footer {
           background-color:  rgba(0, 0, 255, 0.377);
           padding: 10px;
+          margin-top:-12px;
       }
       .card-body {
         background-color: rgba(0, 0, 255, 0.377);
         padding-bottom: 10px;
+        margin-top:-10px;
       }
       .input {
          padding-top: 5px;

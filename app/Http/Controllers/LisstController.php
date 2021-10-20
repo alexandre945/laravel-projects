@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Requests\StoreUpdateList;
 use App\Models\lisst;
 use Illuminate\Http\Request;
 
@@ -34,7 +34,7 @@ class LisstController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request,lisst $list)
+    public function store(StoreUpdateList $request,lisst $list)
     {
         $list->create([
             'user_id'   =>  Auth()->user()->id,
@@ -74,7 +74,7 @@ class LisstController extends Controller
      * @param  \App\Models\lisst  $lisst
      * @return \Illuminate\Http\Response
      */
-    public function update($id, Request $request, lisst $lisst)
+    public function update($id, StoreUpdateList $request, lisst $lisst)
     {
         $update = $lisst->find($id);
         $update->update($request->all());
