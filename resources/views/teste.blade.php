@@ -60,9 +60,14 @@
                                                 @csrf
                                                 <button id="excluir"class="btn btn-danger">Excluir</button>
                                             </form>
-                                                <a href="{{ route('list.edit', $item->id) }}"><button id="update"class="btn btn-success">
-                                                Edit</button></a>
-                                </div>
+                                                <a href="{{ route('list.edit', $item->id) }}"><button id="update"class="btn btn-success"> Edit</button></a>
+                                               
+                                                <form action="{{ route('listtd.destroy',$item->id)}}"  method="post">
+                                                @method('DELETE')
+                                                @csrf
+                                                <button id="excluir"class="btn btn-danger">Excluir/Tudo</button>
+                                            </form>
+                                        </div>
                             </td>
                         </tr>
                     @endforeach
