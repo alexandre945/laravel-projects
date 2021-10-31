@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'new_Lister')
+@section('title', 'New_Lister')
 
 @section('content_header')
 
@@ -11,7 +11,7 @@
     @section('content')
 
         <div class="card-body">
-           
+
             @if ($errors->any())
                 <div class="btn btn-warning">
                     @foreach ($errors->all() as $error)
@@ -36,7 +36,7 @@
 
       <div class="card">
         <div class="text-center col-md-12">
-            <table class="table table-sm col-md-12">
+            <table class="table table-col-md-12">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -61,7 +61,7 @@
                                                 <button id="excluir"class="btn btn-danger">Excluir</button>
                                             </form>
                                                 <a href="{{ route('list.edit', $item->id) }}"><button id="update"class="btn btn-success"> Edit</button></a>
-                                               
+
                                                 <form action="{{ route('listtd.destroy',$item->id)}}"  method="post">
                                                 @method('DELETE')
                                                 @csrf
@@ -79,14 +79,14 @@
         <p>Desenvolvido por XandyDesenvolvimentoweb: (35)-998464219</p>
       </div>
 
-      
+
             @else
             <div class = "btn btn-warning">
                 <p>AINDA NÃO EXISTE NEN UM CADASTADRO NA SUA LISTA</p>
             </div>
              @endif
-       
-       
+
+
     @stop
     </div>
 
@@ -117,7 +117,7 @@
       }
       .button {
           display: flex;
-          margin-left: 0px;
+          margin-left: 30px;
 
       }
       .text-center {
@@ -173,11 +173,11 @@
 
       }
       input {
-          width: 100px;
+          width: 20px;
           padding-top: 5px;
       }
       .button {
-          margin-left: -5px;
+          margin-left: -30px;
           background-color: rgba(0, 0, 255, 0.377);
           padding-top: 10px;
           padding-bottom: 0px;
