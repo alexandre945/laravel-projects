@@ -173,7 +173,7 @@
 
       }
       input {
-          width: 20px;
+          width: 82px;
           padding-top: 5px;
       }
       .button {
