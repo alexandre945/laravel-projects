@@ -65,7 +65,7 @@
                                                 <form action="{{ route('listtd.destroy',$item->id)}}"  method="post">
                                                 @method('DELETE')
                                                 @csrf
-                                                <button id="excluir"class="btn btn-danger">Excluir/Tudo</button>
+                                                <button id="excluir"class="btn btn-danger">Excl/Tud</button>
                                             </form>
                                         </div>
                             </td>
