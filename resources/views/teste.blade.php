@@ -96,10 +96,10 @@
 @section('css')
 
 <style>
-body {
+/* body {
 
-    backgroud-color: rgb(245, 69, 16);
-}
+    background-color: rgb(245, 69, 16);
+} */
 
 .btn btn-warning {
 
@@ -129,20 +129,20 @@ p {
 }
 
 .text-center {
-    background-color: rgba(0, 0, 255, 0.377);
+    background-color: teal;
     padding-bottom: 20px;
 
 }
 
 .car-footer {
-    background-color: rgba(0, 0, 255, 0.377);
+    background-color: teal;
     padding: 10px;
     margin-top: -12px;
     /* width: 550px; */
 }
 
 .card-body {
-    background-color: rgba(0, 0, 255, 0.377);
+    background-color: teal;
     padding-bottom: 10px;
     margin-top: -10px;
 }
@@ -158,7 +158,7 @@ p {
 
 .header {
 
-    background-color: rgba(0, 0, 255, 0.377);
+    background-color: teal;
     height: 80px;
     width: auto;
     justify-content: center;
