@@ -232,6 +232,11 @@ return [
             'url'  => '/list',
 
         ],
+        [
+            'text' => 'Contato',
+            'url'  => '/contact',
+
+        ],
 
     ],
 

@@ -3,12 +3,15 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\teste2Controller;
 use App\Http\Controllers\LisstController;
+use App\Http\Controllers\ContactContrller;
 
 
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/contact', [ContactContrller::class, 'index'])->name('index.contact');
 
 Route::get('/index', [teste2Controller::class, 'index'])->name('index');
 Route::get('/create', [teste2Controller::class, 'create'])->name('create');

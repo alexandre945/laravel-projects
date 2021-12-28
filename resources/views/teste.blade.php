@@ -152,6 +152,7 @@ p {
     padding-bottom: 0px;
     justify-content: center;
     margin-left: 200px;
+    
 
 
 } */
