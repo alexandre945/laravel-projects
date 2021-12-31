@@ -41,7 +41,8 @@ class LisstController extends Controller
             'name'      =>  $request->name,
             'quantidade'    =>  $request->quantidade
         ]);
-        return redirect()->route('list.index');
+        return redirect()->route('list.index')
+        ->with('success', 'aproveite sua lista');
     }
 
     /**

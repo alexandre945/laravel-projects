@@ -11,6 +11,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::post('/contact/post', [ContactContrller::class, 'store'])->name('contact.store');
 Route::get('/contact', [ContactContrller::class, 'index'])->name('index.contact');
 
 Route::get('/index', [teste2Controller::class, 'index'])->name('index');
