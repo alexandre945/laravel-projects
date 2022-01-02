@@ -5,6 +5,7 @@ namespace App\Mail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
+use Illuminate\Http\Request;
 use Illuminate\Queue\SerializesModels;
 
 class SendMail extends Mailable
@@ -31,7 +32,7 @@ class SendMail extends Mailable
     public function build()
     {
         return $this
-                    ->from ( config('mail.from.address'))
+                    ->from ('alexandresousaroberto@gmail.com',)
                     ->subject('contato do desenvolvedor')
                     ->view('message')
                     ->with('data',$this->data);

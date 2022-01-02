@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreRequest;
 use Illuminate\Http\Request;
+use Illuminate\Mail\Mailable;
 use Mail;
 use App\Mail\SendMail;
 use Illuminate\Support\Facades\Mail as FacadesMail;
@@ -35,15 +37,8 @@ class ContactContrller extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
-        $request->validate([
-            'name'=> 'required',
-            'email'=> 'required | email',
-            'subject'=> 'required',
-            'message'=> 'required'
-
-        ]);
 
         $data = array(
             'name' => $request->name,
@@ -52,13 +47,14 @@ class ContactContrller extends Controller
             'message' => $request->message
         );
         Mail::to( config('mail.from.address') )
-                            ->send( new SendMail($data));
+                        ->send(new SendMail($data));
 
           return back()
           ->with('success', 'obrigado pelo contato');
                           
 
     }
+
 
     /**
      * Display the specified resource.

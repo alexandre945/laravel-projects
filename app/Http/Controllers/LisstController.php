@@ -45,6 +45,7 @@ class LisstController extends Controller
         ->with('success', 'aproveite sua lista');
     }
 
+  
     /**
      * Display the specified resource.
      *

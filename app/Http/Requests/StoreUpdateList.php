@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use PhpParser\Builder\Function_;
 
 class StoreUpdateList extends FormRequest
 {
@@ -26,6 +27,14 @@ class StoreUpdateList extends FormRequest
         return [
             'name' => 'required|min:2|max:100',
             'quantidade' => 'required',
+        ];
+    }
+
+    public  function messages()
+    {
+        return[
+             'name.required' => 'o produto é obrigátorio',
+             'quantidade.required' => 'aquantidade é obrigátoria'
         ];
     }
 }
