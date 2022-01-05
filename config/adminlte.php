@@ -230,11 +230,13 @@ return [
         [
             'text' => 'Lista',
             'url'  => '/list',
+            'icon' =>  'fas fa-list-alt'
 
         ],
         [
             'text' => 'Contato',
             'url'  => '/contact',
+            'icon' =>  'fas fa-phone-square'
 
         ],
 
