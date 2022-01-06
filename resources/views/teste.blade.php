@@ -10,7 +10,7 @@
 
     @section('content')
 
-    <div class="card">
+    <div class="rows">
 
         @if ($errors->any())
         <div class="btn btn-warning">
@@ -29,7 +29,7 @@
                     value="{{ old('name') }}" />
                 <input class="btn btn-dark" name="quantidade" type="number" placeholder="-Quantidade"
                     value=" {{ old('quantidade')}}" />
-                <button class="btn btn-dark" onclick createList()>Cadastrar</button>
+                <button class="btn btn-dark" onclick="preventDefault()">Cadastrar</button>
 
             </div>
 
@@ -38,6 +38,7 @@
     @if(!$data->isEmpty())
 
     <div class="card">
+        <div class="rows">
         <div class="text-center col-md-12">
             <table class="table table-condensed">
                 <thead>
@@ -61,7 +62,7 @@
                                 <form action="{{ route('list.destroy',$item->id)}}" method="post">
                                     @method('DELETE')
                                     @csrf
-                                    <button id="excluir" class="btn btn-danger">Excluir</button>
+                                    <button id="excluir" class="btn btn-danger" onclick="preventDefault()">Excluir</button>
                                 </form>
                                 <a href="{{ route('list.edit', $item->id) }}"><button id="update"
                                         class="btn btn-success"> Edit</button></a>
@@ -85,6 +86,9 @@
                 </tbody>
             </table>
         </div>
+
+        </div>
+      
     </div>
     <div class="car-footer">
         <p>Desenvolvido por XandyDesenvolvimentoweb: (35)-998464219</p>
