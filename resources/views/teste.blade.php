@@ -4,7 +4,7 @@
 
 @section('content_header')
 
-<div class="card">
+<div class="container-xl">
     <h1 class="text-center">Bem vindo a sua lista de Compras</h1>
     @stop
 
@@ -15,7 +15,12 @@
         @if ($errors->any())
         <div class="btn btn-warning">
             @foreach ($errors->all() as $error)
-            <p> {{ $error}}</p>
+            <ul>
+                <li>
+                {{ $error}}
+                </li>
+            </ul>
+            
             @endforeach
         </div>
         @endif
@@ -97,7 +102,7 @@
 
     @else
     <div class="btn btn-warning">
-        <p>AINDA NÃO EXISTE NEN UM CADASTADRO NA SUA LISTA</p>
+        <li>AINDA NÃO EXISTE NEN UM CADASTADRO NA SUA LISTA</li>
     </div>
     @endif
     @stop
@@ -191,12 +196,13 @@ input {
 
 
 @media (max-width:600px) {
-    .conteudo {
+    /* .conteudo {
         width: 340px;
         height: 12px;
 
 
-    }
+    } */
+   
 
     .input {
         width: 548px;
@@ -215,10 +221,10 @@ input {
         width: 550px;
     }
 
-    .card-body {
+    /* .card-body {
         width: 548px;
         padding-bottom: 10px;
-    }
+    } */
 
     .table table-sm {
         width: 360px;
@@ -237,7 +243,9 @@ input {
 
     }
 
-
+    .car-footer{
+        width: 550px;
+    }
 
 }
 </style>
