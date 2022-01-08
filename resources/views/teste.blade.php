@@ -5,13 +5,6 @@
 @section('content_header')
 
 <div class="container-xl">
-    <h1 class="text-center">Bem vindo a sua lista de Compras</h1>
-    @stop
-
-    @section('content')
-
-    <div class="rows">
-
         @if ($errors->any())
         <div class="btn btn-warning">
             @foreach ($errors->all() as $error)
@@ -24,21 +17,23 @@
             @endforeach
         </div>
         @endif
+    <h1>Bem vindo a sua lista de Compras</h1>
+    @stop
 
+    @section('content')
+
+    <div class="rows">
+        <div class="header">
         <form action="{{route('list.store')}}" method="post">
             @csrf
-
-            <div class="header">
-
-                <input class="btn btn-dark" id="newtask" name="name" type="text" placeholder="-Produto"
+                <input class="btn btn-dark" id="newtask" name="name" type="text" placeholder="Produto"
                     value="{{ old('name') }}" />
-                <input class="btn btn-dark" name="quantidade" type="number" placeholder="-Quantidade"
+                <input class="btn btn-dark" name="quantidade" type="number" placeholder="Quantidade"
                     value=" {{ old('quantidade')}}" />
                 <button class="btn btn-dark" onclick="preventDefault()">Cadastrar</button>
-
-            </div>
-
         </form>
+
+        </div>
     </div>
     @if(!$data->isEmpty())
 
@@ -112,32 +107,18 @@
 @section('css')
 
 <style>
-/* body {
-
-    background-color: rgb(245, 69, 16);
-} */
-
-.btn btn-warning {
-
-    background-color: rgba(0, 0, 255, 0.377);
-}
-
-
-#excluir {
-    margin-right: 0px;
-
-}
-
-#paragraf {
+    #paragraf {
     display: flex;
     margin-left: 300px;
 
 }
+#excluir {
+    margin-right: 0px;
 
+}
 p {
     margin-left: 50px;
 }
-
 .button {
     display: flex;
     margin-left: 30px;
@@ -154,7 +135,7 @@ p {
     background-color: teal;
     padding: 10px;
     margin-top: -12px;
-    /* width: 550px; */
+   
 }
 
 .card-body {
@@ -163,15 +144,7 @@ p {
     margin-top: -10px;
 }
 
-/* .input {
-    padding-top: 25px;
-    padding-bottom: 0px;
-    justify-content: center;
-    margin-left: 200px;
-    
 
-
-} */
 
 .header {
 
@@ -190,7 +163,14 @@ p {
 
 input {
     padding: 2px;
-
+   
+}
+h1 {
+    text-align: center;
+        background-color: teal;
+        padding-top: 20px;
+        
+        height: 80px;
 }
 
 
@@ -201,12 +181,18 @@ input {
         height: 12px;
 
 
-    } */
+    }  */
    
 
     .input {
-        width: 548px;
+        width: 542px;
         margin-left: 60px;
+    }
+    h1 {
+        text-align: center;
+        background-color: teal;
+        width: 542px;
+        padding-top: 20px;
     }
 
     .text-center {
@@ -219,9 +205,10 @@ input {
     .header {
         margin-botton: 2px;
         width: 550px;
+       
     }
 
-    /* .card-body {
+     /* .card-body {
         width: 548px;
         padding-bottom: 10px;
     } */
@@ -232,7 +219,7 @@ input {
     }
 
     input {
-        width: 82px;
+        width: 110px;
         padding-top: 5px;
     }
 
@@ -245,9 +232,9 @@ input {
 
     .car-footer{
         width: 550px;
-    }
+    } 
 
-}
+}  
 </style>
 @stop
 
