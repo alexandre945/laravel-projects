@@ -46,7 +46,7 @@
                         <th>ID</th>
                         <th>Nome</th>
                         <th>QUANTIDADE</th>
-                        <th>Usuario</th>
+                        <th id="user">Usuario</th>
                         <th>Ação</th>
                     </tr>
                 </thead>
@@ -56,7 +56,7 @@
                         <td> {{ $item->id }} </td>
                         <td> <input type="checkbox" value="{{ $item->name }}">{{ $item->name }} </td>
                         <td> {{ $item->quantidade }} </td>
-                        <td> {{ $item->user->name }} </td>
+                        <td id="users"> {{ $item->user->name }} </td>
                         <td>
                             <div class="button">
                                 <form action="{{ route('list.destroy',$item->id)}}" method="post">
@@ -176,35 +176,37 @@ h1 {
 
 
 @media (max-width:600px) {
-    /* .conteudo {
-        width: 340px;
-        height: 12px;
 
-
-    }  */
-   
-
+/* 
     .input {
-        width: 542px;
+        width: 500px;
         margin-left: 60px;
+    } */
+     #user {
+        display: none;
+    } 
+    #users {
+        display: none;
     }
     h1 {
         text-align: center;
         background-color: teal;
-        width: 542px;
+        width: 504px;
         padding-top: 20px;
     }
 
     .text-center {
-        width: 548px;
+        width: 510px;
         padding-bottom: 10px;
         padding-top: 10px;
+     
+  
 
     }
 
     .header {
         margin-botton: 2px;
-        width: 550px;
+        width: 510px;
        
     }
 
@@ -224,7 +226,7 @@ h1 {
     }
 
     .button {
-        margin-left: -30px;
+        margin-left: -50px;
         padding-top: 10px;
         padding-bottom: 0px;
 
