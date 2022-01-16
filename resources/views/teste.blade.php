@@ -5,18 +5,18 @@
 @section('content_header')
 
 <div class="container-xl">
-        @if ($errors->any())
-        <div class="btn btn-warning">
-            @foreach ($errors->all() as $error)
-            <ul>
-                <li>
+    @if ($errors->any())
+    <div class="btn btn-warning">
+        @foreach ($errors->all() as $error)
+        <ul>
+            <li>
                 {{ $error}}
-                </li>
-            </ul>
-            
-            @endforeach
-        </div>
-        @endif
+            </li>
+        </ul>
+
+        @endforeach
+    </div>
+    @endif
     <h1>Bem vindo a sua lista de Compras</h1>
     @stop
 
@@ -24,14 +24,14 @@
 
     <div class="rows">
         <div class="header">
-        <form action="{{route('list.store')}}" method="post">
-            @csrf
+            <form action="{{route('list.store')}}" method="post">
+                @csrf
                 <input class="btn btn-dark" id="newtask" name="name" type="text" placeholder="Produto"
                     value="{{ old('name') }}" />
                 <input class="btn btn-dark" name="quantidade" type="number" placeholder="Quantidade"
                     value=" {{ old('quantidade')}}" />
                 <button class="btn btn-dark" onclick="preventDefault()">Cadastrar</button>
-        </form>
+            </form>
 
         </div>
     </div>
@@ -39,56 +39,57 @@
 
     <div class="card">
         <div class="rows">
-        <div class="text-center col-md-12">
-            <table class="table table-condensed">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nome</th>
-                        <th>QUANTIDADE</th>
-                        <th id="user">Usuario</th>
-                        <th>Ação</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($data as $item)
-                    <tr>
-                        <td> {{ $item->id }} </td>
-                        <td> <input type="checkbox" value="{{ $item->name }}">{{ $item->name }} </td>
-                        <td> {{ $item->quantidade }} </td>
-                        <td id="users"> {{ $item->user->name }} </td>
-                        <td>
-                            <div class="button">
-                                <form action="{{ route('list.destroy',$item->id)}}" method="post">
-                                    @method('DELETE')
-                                    @csrf
-                                    <button id="excluir" class="btn btn-danger" onclick="preventDefault()">Excluir</button>
-                                </form>
-                                <a href="{{ route('list.edit', $item->id) }}"><button id="update"
-                                        class="btn btn-success"> Edit</button></a>
+            <div class="text-center col-ms-12 col-md-12">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>QUANTIDADE</th>
+                            <th id="user">Usuario</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($data as $item)
+                        <tr>
+                            <td> {{ $item->id }} </td>
+                            <td> <input type="checkbox" value="{{ $item->name }}">{{ $item->name }} </td>
+                            <td> {{ $item->quantidade }} </td>
+                            <td id="users"> {{ $item->user->name }} </td>
+                            <td>
+                                <div class="button">
+                                    <form action="{{ route('list.destroy',$item->id)}}" method="post">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button id="excluir" class="btn btn-danger"
+                                            onclick="preventDefault()">Excluir</button>
+                                    </form>
+                                    <a href="{{ route('list.edit', $item->id) }}"><button id="update"
+                                            class="btn btn-success"> Edit</button></a>
 
-                                <form action="{{ route('listtd.destroy',$item->id)}}" method="post">
-                                    @method('DELETE')
-                                    @csrf
-                                    <!-- <button id="excluir"class="btn btn-danger">Excl/Tud</button>   -->
-                                </form>
-                            </div>
-                        </td>
-                    </tr>
-                    @endforeach
-                    @if($message = Session::get('success'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <strong>produto cadastrado com sucesso!</strong> {{ $message }}
-                    <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> -->
-                </div>
-                @endif
+                                    <form action="{{ route('listtd.destroy',$item->id)}}" method="post">
+                                        @method('DELETE')
+                                        @csrf
+                                        <!-- <button id="excluir"class="btn btn-danger">Excl/Tud</button>   -->
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                        @endforeach
+                        @if($message = Session::get('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>produto cadastrado com sucesso!</strong> {{ $message }}
+                            <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> -->
+                        </div>
+                        @endif
 
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
+
         </div>
 
-        </div>
-      
     </div>
     <div class="car-footer">
         <p>Desenvolvido por XandyDesenvolvimentoweb: (35)-998464219</p>
@@ -107,18 +108,21 @@
 @section('css')
 
 <style>
-    #paragraf {
+#paragraf {
     display: flex;
     margin-left: 300px;
 
 }
+
 #excluir {
     margin-right: 0px;
 
 }
+
 p {
     margin-left: 50px;
 }
+
 .button {
     display: flex;
     margin-left: 30px;
@@ -135,7 +139,7 @@ p {
     background-color: teal;
     padding: 10px;
     margin-top: -12px;
-   
+
 }
 
 .card-body {
@@ -163,31 +167,34 @@ p {
 
 input {
     padding: 2px;
-   
+
 }
+
 h1 {
     text-align: center;
-        background-color: teal;
-        padding-top: 20px;
-        
-        height: 80px;
+    background-color: teal;
+    padding-top: 20px;
+
+    height: 80px;
 }
 
 
 
 @media (max-width:600px) {
 
-/* 
+    /* 
     .input {
         width: 500px;
         margin-left: 60px;
     } */
-     #user {
+    #user {
         display: none;
-    } 
+    }
+
     #users {
         display: none;
     }
+
     h1 {
         text-align: center;
         background-color: teal;
@@ -199,18 +206,18 @@ h1 {
         width: 510px;
         padding-bottom: 10px;
         padding-top: 10px;
-     
-  
+
+
 
     }
 
     .header {
         margin-botton: 2px;
         width: 510px;
-       
+
     }
 
-     /* .card-body {
+    /* .card-body {
         width: 548px;
         padding-bottom: 10px;
     } */
@@ -232,11 +239,11 @@ h1 {
 
     }
 
-    .car-footer{
+    .car-footer {
         width: 550px;
-    } 
+    }
 
-}  
+}
 </style>
 @stop
 
