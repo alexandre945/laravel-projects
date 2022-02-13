@@ -15,7 +15,7 @@ class LisstController extends Controller
     public function index(lisst $list)
     {
         $data = $list->where('user_id', Auth()->user()->id)->get();
-        return view('teste', compact('data'));
+        return view('index', compact('data'));
     }
 
     /**
