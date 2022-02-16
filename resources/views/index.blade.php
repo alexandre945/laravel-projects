@@ -24,21 +24,24 @@
 
     @section('content')
 
-    <div class="row-cols-lg-10">
-        <div class="button">
-            <H5>BEM VINDO A SUA LISTA DE COMPRAS</H5>
+    <div class="text-center colo-ms-12 "style="width:52vh">
+        <div class="row justify-content-ms-center">
+            <H5 class="fst-italic">BEM VINDO A SUA LISTA DE COMPRAS</H5>
             <form action="{{route('list.store')}}" method="post">
                 @csrf
-                <input class="btn btn-dark" id="newtask" name="name" type="text" placeholder="Produto"
-                    value="{{ old('name') }}" />
-                <input class="btn btn-dark" name="quantidade" type="number" placeholder="Quantidade"
-                    value=" {{ old('quantidade')}}" />
-                <button class="btn btn-dark" onclick="preventDefault()"id="button">Cadastrar</button>
+                <div class="d-inline  text-white">
+                    <input class="btn btn-dark " id="newtask" name="name" type="text"
+                        placeholder="Produto" value="{{ old('name') }}" />
+                    <input class="btn btn-dark " name="quantidade" type="number"
+                        placeholder="Quantidade" value=" {{ old('quantidade')}}" />
+                    <button class="btn btn-dark" onclick="preventDefault()" id="button">Cadastrar</button>
+                </div>
+
             </form>
 
         </div>
-    </div>
 
+    </div>
 
     @if(!$data->isEmpty())
 
@@ -149,7 +152,7 @@
 <style>
 .text-center {
     background-color: teal;
-  
+
 }
 
 .car-footer {
@@ -160,10 +163,8 @@
 .table {
     background-color: teal;
 }
-.button {
-    margin-left:60px;
- 
-}
+
+
 </style>
 @stop
 @section('js')
