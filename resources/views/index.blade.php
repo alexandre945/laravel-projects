@@ -23,17 +23,21 @@
     @stop
 
     @section('content')
-
-    <div class="text-center colo-ms-12 "style="width:52vh">
-        <div class="row justify-content-ms-center">
-            <H5 class="fst-italic">BEM VINDO A SUA LISTA DE COMPRAS</H5>
+    @if($message = Session::get('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>produto cadastrado com sucesso!</strong> {{ $message }}
+    </div>
+    @endif
+    <div class="text-center col-ms-12 col-md-12  ">
+        <div class="row justify-content-ms-center ">
+            <H5 class="fst-italic mt-3">BEM VINDO A SUA LISTA DE COMPRAS</H5>
             <form action="{{route('list.store')}}" method="post">
                 @csrf
-                <div class="d-inline  text-white">
-                    <input class="btn btn-dark " id="newtask" name="name" type="text"
-                        placeholder="Produto" value="{{ old('name') }}" />
-                    <input class="btn btn-dark " name="quantidade" type="number"
-                        placeholder="Quantidade" value=" {{ old('quantidade')}}" />
+                <div class="d-inline  text-white mt-5">
+                    <input class="btn btn-dark " id="newtask" name="name" type="text" placeholder="Produto"
+                        value="{{ old('name') }}" />
+                    <input class="btn btn-dark " name="quantidade" type="number" placeholder="Quantidade"
+                        value=" {{ old('quantidade')}}" />
                     <button class="btn btn-dark" onclick="preventDefault()" id="button">Cadastrar</button>
                 </div>
 
@@ -45,16 +49,16 @@
 
     @if(!$data->isEmpty())
 
-    <div class="card">
+    <div class="card ">
         <div class="rows">
-            <div class="text-center col-ms-12 col-md-12">
-                <table class="table table-condensed">
+            <div class="text-center ">
+                <table class="table table-condensed ">
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Nome</th>
+                            <th>Produto</th>
                             <th>QUANTIDADE</th>
-                            <th id="user">Usuario</th>
+                            <!-- <th id="user">Usuario</th> -->
                             <th>Ação</th>
                         </tr>
                     </thead>
@@ -62,9 +66,9 @@
                         @foreach ($data as $item)
                         <tr>
                             <td> {{ $item->id }} </td>
-                            <td> <input type="checkbox" value="{{ $item->name }}">{{ $item->name }} </td>
+                           <td> {{ $item->name}} </td>
                             <td> {{ $item->quantidade }} </td>
-                            <td id="users"> {{ $item->user->name }} </td>
+                            <!-- <td id="users"> {{ $item->user->name }} </td> -->
                             <td>
                                 <div class="d-flex flex-wrap">
                                     <form action="{{ route('list.destroy',$item->id)}}" method="post">
@@ -111,11 +115,7 @@
                             </div>
                         </form>
                         @endforeach
-                        @if($message = Session::get('success'))
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <strong>produto cadastrado com sucesso!</strong> {{ $message }}
-                        </div>
-                        @endif
+
                     </tbody>
 
 
@@ -152,6 +152,7 @@
 <style>
 .text-center {
     background-color: teal;
+    
 
 }
 
@@ -163,7 +164,6 @@
 .table {
     background-color: teal;
 }
-
 
 </style>
 @stop
