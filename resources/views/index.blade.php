@@ -33,11 +33,11 @@
                     <form action="{{route('list.store')}}" method="post">
                         @csrf
                         <div class="d-inline  text-white mt-5">
-                            <input class="btn btn-dark " id="newtask" name="name" type="text" placeholder="Produto"
+                            <input class="btn btn-dark mt-2 mb-2" id="newtask" name="name" type="text" placeholder="Produto"
                                 value="{{ old('name') }}" />
-                            <input class="btn btn-dark " name="quantidade" type="number" placeholder="Quantidade"
+                            <input class="btn btn-dark mt-2 mb-2" name="quantidade" type="number" placeholder="Quantidade"
                                 value=" {{ old('quantidade')}}" />
-                            <button class="btn btn-dark" onclick="preventDefault()" id="button">Cadastrar</button>
+                            <button class="btn btn-dark mt-2 mb-2" onclick="preventDefault()" id="button">Cadastrar</button>
                         </div>
 
                     </form>
@@ -63,7 +63,7 @@
                                             <td> {{ $item->name}} </td>
                                             <td> {{ $item->quantidade }} </td>
                                             <td>
-                                                <div class="">
+                                                <div class="button ">
                                                     <form action="{{ route('list.destroy',$item->id)}}" method="post">
                                                         @method('DELETE')
                                                         @csrf
