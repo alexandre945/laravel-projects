@@ -4,40 +4,48 @@
 
 @section('content_header')
 
-@if ($errors->any())
-<div class="btn btn-warning">
-    @foreach ($errors->all() as $error)
-    <ul>
-        <li>
-            {{ $error}}
-        </li>
-    </ul>
+    @if ($errors->any())
+        <div class="btn btn-warning">
+            @foreach ($errors->all() as $error)
+                <ul>
+                    <li>
+                        {{ $error}}
+                    </li>
+                </ul>
 
-    @endforeach
-</div>
-@endif
+            @endforeach
+        </div>
+    @endif
 
 @stop
 
 @section('content')
-@if($message = Session::get('success'))
+
     <div class="container-fluid">
+         @if($message = Session::get('success'))
         <div class="text-center col-ms-12 col-md-6 ">
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong>produto cadastrado com sucesso!</strong> {{ $message }}
             </div>
-            @endif
+         @endif
             <div class="text-center col-ms-12 col-md-12  ">
                 <div class="row justify-content-ms-center ">
-                    <H5 class="fst-italic mt-3">BEM VINDO A SUA LISTA DE COMPRAS</H5>
+                      @if(date('H') >= 0 && date('H') <= 12) 
+                          <p mt-3>Bomdia</p>
+                       @elseif(date('H') >= 13 && date('H') <= 18)
+                        <p class="pt-3 ">Boa Tarde</p>  
+                        @else
+                        <p>Boa Noite</p>
+                      @endif
+                    <H5 class="fst-italic mt-1">BEM VINDO A SUA LISTA DE COMPRAS</H5>
                     <form action="{{route('list.store')}}" method="post">
                         @csrf
                         <div class="d-inline  text-white mt-5">
-                            <input class="btn btn-dark mt-2 mb-2" id="newtask" name="name" type="text" placeholder="Produto"
+                            <input class="btn btn-dark mt-1 mb-2" id="newtask" name="name" type="text" placeholder="Produto"
                                 value="{{ old('name') }}" />
-                            <input class="btn btn-dark mt-2 mb-2" name="quantidade" type="number" placeholder="Quantidade"
+                            <input class="btn btn-dark mt-1 mb-2" name="quantidade" type="number" placeholder="Quantidade"
                                 value=" {{ old('quantidade')}}" />
-                            <button class="btn btn-dark mt-2 mb-2" onclick="preventDefault()" id="button">Cadastrar</button>
+                            <button class="btn btn-dark mt-1 mb-2" onclick="preventDefault()" id="button">Cadastrar</button>
                         </div>
 
                     </form>
@@ -63,7 +71,7 @@
                                             <td> {{ $item->name}} </td>
                                             <td> {{ $item->quantidade }} </td>
                                             <td>
-                                                <div class="button ">
+                                                <div class="me-5">
                                                     <form action="{{ route('list.destroy',$item->id)}}" method="post">
                                                         @method('DELETE')
                                                         @csrf
@@ -98,7 +106,7 @@
                                                         <div class="modal-body">
                                                             <p>Tem certeza que deseja excluir este item?</p>
                                                         </div>
-                                                        <div class="modal-footer">
+                                                        <div class="modal-footer mt-10">
                                                             <button type="button" class="btn btn-warning"
                                                                 data-bs-dismiss="modal">Cancelar</button>
                                                             <button type="submit" class="btn btn-danger">Excluir</button>
@@ -121,7 +129,7 @@
 @stop
 
 @section('footer')
-    <div class="car-footer">
+    <div class="car-footer mt-0">
         <p>Desenvolvido por XandyDesenvolvimentoweb: (35)-998464219</p>
     </div>
 @endsection
