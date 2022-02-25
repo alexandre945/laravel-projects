@@ -22,8 +22,7 @@
 @section('content')
 
     <div class="container-fluid">
-         @if($message = Session::get('success'))
-        <div class="text-center col-ms-12 col-md-6 ">
+        @if($message = Session::get('success'))    
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong>produto cadastrado com sucesso!</strong> {{ $message }}
             </div>
@@ -35,9 +34,9 @@
                         @elseif(date('H') >= 13 && date('H') <= 18)
                             <p class="pt-3 ">Boa Tarde</p>  
                         @else
-                            <p class="pt-3">Boa Noite</p>
+                            <p class="pt-3 fst-italic">Boa Noite</p>
                       @endif
-                                <H5 class="fst-italic mt-1">BEM VINDO A SUA LISTA DE COMPRAS</H5>
+                                <H5 class="fst-italic mt-1">SEJA-BEM VINDO A SUA LISTA DE COMPRAS</H5>
                     <form action="{{route('list.store')}}" method="post">
                         @csrf
                         <div class="d-inline  text-white mt-5">
@@ -45,13 +44,11 @@
                                 value="{{ old('name') }}" />
                             <input class="btn btn-dark mt-1 mb-2" name="quantidade" type="number" placeholder="Quantidade"
                                 value=" {{ old('quantidade')}}" />
-                            <button class="btn btn-dark mt-1 mb-2" onclick="preventDefault()" id="button">Cadastrar</button>
+                            <button class="btn btn-dark mt-1 mb-2" onclick=preventDefault() id="button">Cadastrar</button>
                         </div>
-
                     </form>
                 </div>
             </div>
-        </div>
         @if(!$data->isEmpty())
                 <div class="text-center col-ms-12 col-md-12 ">
                         <div class=" row ">
@@ -75,7 +72,7 @@
                                                     <form action="{{ route('list.destroy',$item->id)}}" method="post">
                                                         @method('DELETE')
                                                         @csrf
-                                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                                        <button type="button" class="btn btn-danger "onclick= preventDefault() data-bs-toggle="modal"
                                                             data-bs-target="#exampleModal{{$item->id}}">
                                                             Excluir
                                                         </button>
@@ -129,8 +126,8 @@
 @stop
 
 @section('footer')
-    <div class="car-footer mt-0">
-        <p>Desenvolvido por XandyDesenvolvimentoweb: (35)-998464219</p>
+    <div class="car-footer mt-0 pt-3 pb-2">
+        <p class="text-dark">Desenvolvido por XandyDesenvolvimentoweb: (35)-998464219</p>
     </div>
 @endsection
 
