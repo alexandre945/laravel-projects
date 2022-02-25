@@ -31,13 +31,13 @@
             <div class="text-center col-ms-12 col-md-12  ">
                 <div class="row justify-content-ms-center ">
                       @if(date('H') >= 0 && date('H') <= 12) 
-                          <p mt-3>Bomdia</p>
-                       @elseif(date('H') >= 13 && date('H') <= 18)
-                        <p class="pt-3 ">Boa Tarde</p>  
+                        <p mt-3>Bomdia</p>
+                        @elseif(date('H') >= 13 && date('H') <= 18)
+                            <p class="pt-3 ">Boa Tarde</p>  
                         @else
-                        <p>Boa Noite</p>
+                            <p class="pt-3">Boa Noite</p>
                       @endif
-                    <H5 class="fst-italic mt-1">BEM VINDO A SUA LISTA DE COMPRAS</H5>
+                                <H5 class="fst-italic mt-1">BEM VINDO A SUA LISTA DE COMPRAS</H5>
                     <form action="{{route('list.store')}}" method="post">
                         @csrf
                         <div class="d-inline  text-white mt-5">
@@ -71,7 +71,7 @@
                                             <td> {{ $item->name}} </td>
                                             <td> {{ $item->quantidade }} </td>
                                             <td>
-                                                <div class="me-5">
+                                                <div class="d-inline  text-white mt-5">
                                                     <form action="{{ route('list.destroy',$item->id)}}" method="post">
                                                         @method('DELETE')
                                                         @csrf
