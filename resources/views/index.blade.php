@@ -31,10 +31,10 @@
                 <div class="row justify-content-ms-center ">
                       @if(date('H') >= 0 && date('H') <= 12) 
                         <p mt-3>Bomdia</p>
-                        @elseif(date('H') >= 13 && date('H') <= 18)
+                        @elseif(date('H') >= 12 && date('H') <= 18)
                             <p class="pt-3 ">Boa Tarde</p>  
                         @else
-                            <p class="pt-3 fst-italic">Boa Noite</p>
+                            <p class="pt-3 fst-italic"><b>Boa Noite</b></p>
                       @endif
                                 <H5 class="fst-italic mt-1">SEJA-BEM VINDO A SUA LISTA DE COMPRAS</H5>
                     <form action="{{route('list.store')}}" method="post">
@@ -117,20 +117,20 @@
                             </table>
                         </div>
                 </div>   
-    </div>                                   
-    @else
-        <div class="btn btn-warning">
-            <li>AINDA NÃO EXISTE NEN UM CADASTADRO NA SUA LISTA</li>
-        </div>
-    @endif
-@stop
+            </div>                                
+                @else
+                    <div class="btn btn-warning">
+                        <li>AINDA NÃO EXISTE NEN UM CADASTADRO NA SUA LISTA</li>
+                    </div>
+                @endif
+            @stop
 
-@section('footer')
-    <div class="car-footer mt-0 pt-3 pb-2">
-        <p class="text-dark">Desenvolvido por XandyDesenvolvimentoweb: (35)-998464219</p>
-    </div>
-@endsection
-
+            @section('footer')
+                <div class="car-footer mt-0  pt-3 pb-2 ">
+                    <p class="text-dark pl-3">Desenvolvido por XandyDesenvolvimentoweb: (35)-998464219</p>
+                </div>
+            @endsection
+        
 
 
 @section('css')
