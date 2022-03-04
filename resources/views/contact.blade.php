@@ -62,8 +62,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="message">Mensagen</label>
-                    <textarea name="message" class="form-control" placeholder="Digite-Sua mesagen"></textarea>
+                    <label for="message">Mensagem</label>
+                    <textarea name="message" class="form-control" placeholder="Digite-Sua mesagem"></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Enviar</button>

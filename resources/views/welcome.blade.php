@@ -43,7 +43,7 @@
             <div class="row align-items-center justify-content-center ">
                 <div class="text-center">
                     <h2>Cadastre-se aqui:</h2>
-                    <p>Ou faça o login Para ter acesso asua lista de Comprapas</p>
+                    <p>Ou faça o login Para ter acesso asua lista de Compras</p>
                     </div>
 
                     <div class="relative flex  justify-center bg-gray-100 dark:bg-gray-700 sm:items-center py-4 sm:pt-0">
