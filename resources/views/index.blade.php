@@ -30,7 +30,7 @@
             <div class="text-center col-ms-12 col-md-12  ">
                 <div class="row justify-content-ms-center ">
                       @if(date('H') >= 0 && date('H') <= 12) 
-                        <p mt-3>Bomdia</p>
+                        <p class="mt-3">Bomdia</p>
                         @elseif(date('H') >= 12 && date('H') <= 18)
                             <p class="pt-3 ">Boa Tarde</p>  
                         @else
@@ -77,16 +77,61 @@
                                                             Excluir
                                                         </button>
                                                     </form>
-                                                    <a href="{{ route('list.edit', $item->id) }}"><button id="update"
-                                                            class="btn btn-success"> Edit</button></a>
+                                            </td>   
 
-                                                    <!-- <form action="{{ route('listtd.destroy',$item->id)}}" method="post">
-                                                        @method('DELETE')
-                                                        @csrf
-                                                        <button id="excluir"class="btn btn-danger">Excl/Tud</button>  
-                                                    </form> -->
+                                            <td>
+                                                <button class="btn btn-success" data-bs-toggle="modal"
+                                                data-bs-target="#firstModal{{$item->id}}"> Edit</button>
+
+                                                <div class="modal fade" id="firstModal{{$item->id}}" tabindex="-1"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header,btn btn-warning">
+                                                                <h5 class="modal-title" id="exampleModalLabel">Atualizar</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                    aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <Form action="{{ route('list.update', $item->id) }}" method="post">
+                                                                    @method('PUT')
+                                                                    @csrf
+                                                                    <div class="text">
+                                                                      <form class="grup-control">
+                                                                          <fieldset>
+                                                                              <div class="label">
+                                                                                <label>digite-seu-Produto</label>
+                                                                                <input type="text" name="name" value="{{ $item->name }}"/><br>
+                                                                              </div>
+                                                                              <div class="label2">
+                                                                                <label>digite-a-quantidade</label>
+                                                                                <input type="number" name="quantidade" value="{{ $item->quantidade }}"/><br>
+                                                                              </div>
+                                                        
+                                                                            <button class="btn btn-primary" type="submit">Atualizar</button>
+                                                                          </fieldset>
+                                                        
+                                                                      </form>
+                                                        
+                                                                    </div>
+                                                                </Form>
+                                                            </div>
+                                                            <div class="modal-footer mt-10">
+                                                                <button type="button" class="btn btn-warning"
+                                                                    data-bs-dismiss="modal">Cancelar</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </td>
+                                                        
+
+                                                <!-- <form action="{{ route('listtd.destroy',$item->id)}}" method="post">
+                                                    @method('DELETE')
+                                                    @csrf
+                                                    <button id="excluir"class="btn btn-danger">Excl/Tud</button>  
+                                                </form> -->
+                                            </div>
+                                            </td>   
                                         </tr>
                                         <form action="{{ route('list.destroy',$item->id) }}" method="post">
                                             @csrf
@@ -101,7 +146,7 @@
                                                                 aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <p>Tem certeza que deseja excluir este item?</p>
+                                                            <p>Tem certeza que deseja excluir este item?<br>{{ $item->name}}</p>
                                                         </div>
                                                         <div class="modal-footer mt-10">
                                                             <button type="button" class="btn btn-warning"
@@ -123,6 +168,7 @@
                         <li>AINDA NÃO EXISTE NEN UM CADASTADRO NA SUA LISTA</li>
                     </div>
                 @endif
+             
             @stop
 
             @section('footer')
@@ -149,6 +195,12 @@
 .container-fluid{
     background-color: teal;
 }
+.orange {
+    background-color: rgb(238, 103, 20);
+}
+.blue {
+    background-color: darkslategrey;
+}
 </style>
 @stop
 @section('js')
@@ -160,5 +212,11 @@
     </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <script>
+        document.getElementById("btn-orange").addEventListener("click", function(){
+            document.querySelector("table").setAttribute("class","orange");
+        })
+    </script>
 @stop
 
