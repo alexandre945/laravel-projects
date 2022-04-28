@@ -77,9 +77,7 @@
                                                             Excluir
                                                         </button>
                                                     </form>
-                                            </td>   
-
-                                            <td>
+                                           
                                                 <button class="btn btn-success" data-bs-toggle="modal"
                                                 data-bs-target="#firstModal{{$item->id}}"> Edit</button>
 
@@ -100,11 +98,9 @@
                                                                       <form class="grup-control">
                                                                           <fieldset>
                                                                               <div class="label">
-                                                                                <label>digite-seu-Produto</label>
                                                                                 <input type="text" name="name" value="{{ $item->name }}"/><br>
                                                                               </div>
                                                                               <div class="label2">
-                                                                                <label>digite-a-quantidade</label>
                                                                                 <input type="number" name="quantidade" value="{{ $item->quantidade }}"/><br>
                                                                               </div>
                                                         
