@@ -7,25 +7,37 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## Projeto com Laravel 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Trata-se de uma lista inicialmente de compra podendo ser utilizada também como outro tipo de lista,
+onde você pode inserir um dado e uma quantidade,esses dados são persistidos no banco de dados e você
+pode acessar do seu smartfone no supermercado se caso for este seu objetivo de uso 
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## TECNOLOGIIAS USADAS
++ Laravel 8
++ Docker version 20.10.16
++ Docker-compose version 1.26.0
++ Laradock
++ Mysql version  8.0.29
++ Nginx
+## REQUESITOS PARA RODAR ESTE PROJETO no mesmo ambiente que o meu
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
++ Você precisa de ter instalado git
++ Você precisa ter instaldo Laravel 8
++ Você precisa ter instalado Docker version 2010.16
++ Você precisa ter instalado docker-compose version 1.26.0
 
-## Learning Laravel
+## INSTRUÇOẼS PARA RODAR ESSE PROJETO NA SUA MAQUINA
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
++ Primeiro passo é clonar este repositorio para sua maquina
++ Em uma pasta você digita git clone https://github.com/alexandre945/laravel-projects.git
++ Entra na pasta onde você clonou o projeto 
++ Provavelmente a pasta laradock vai estar vazia sugiro que você delete ela 
++ enseguida ainda dentro da pasta você vai digitar git clone https://github.com/laradock/laradock.git
++ com isso você vai ter o Laradock dentro do seu projeto
++ Depois disto no terminal ainda dentro da pasta do projeto navegue até a pasta laradock entra nela e  digita cp .env.example .env
++ Esse comando vai fazer uma copia do .env do laradock
++ 
 
 ## Laravel Sponsors
 
