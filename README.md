@@ -26,6 +26,7 @@ pode acessar do seu smartfone no supermercado se caso for este seu objetivo de u
 + Você precisa ter instaldo Laravel 8
 + Você precisa ter instalado Docker version 2010.16
 + Você precisa ter instalado docker-compose version 1.26.0
++ Você precisa ter Visual esetudio code instalado
 
 ## INSTRUÇOẼS PARA RODAR ESSE PROJETO NA SUA MAQUINA
 
@@ -37,11 +38,38 @@ pode acessar do seu smartfone no supermercado se caso for este seu objetivo de u
 + com isso você vai ter o Laradock dentro do seu projeto
 + Depois disto no terminal ainda dentro da pasta do projeto navegue até a pasta laradock entra nela e  digita cp .env.example .env
 + Esse comando vai fazer uma copia do .env do laradock
-+ 
++ Vamos para as configuraçoẽs do .env 
++ NGINX_HOST_HTTP_PORT=80
++ MARIADB_VERSION=latest
++ MARIADB_DATABASE=aqui nome do  seu banco de dadoos 
++ MARIADB_USER=senha do usuario
++ MARIADB_PASSWORD= senha
++ MARIADB_PORT=3306 essa porta é padrão 
++MARIADB_ROOT_PASSWORD=senha
++ADM_PORT=8081
++ ADM_INSTALL_MSSQL=false
++ ADM_PLUGINS=
++ ADM_DESIGN=pepa-linha
++ ADM_DEFAULT_SERVER=mysql
++ PMA_DB_ENGINE=mariadb
++ agora é o .env do projeto Laravel
++ DB_CONNECTION=mysql
++ DB_HOST=mariadb
++ DB_PORT=3306
++ DB_DATABASE=laravel
++ DB_USERNAME= sua senha
++ DB_PASSWORD= sua senha
 
-## Laravel Sponsors
+## COMANDOS UTILIZADOS
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
++ Ainda dentro da pasta do projeto digite code .
++ Apartir dai se quiser usar o terminal inbutido do visual estudio code
++ navegue até a pasta laradock entra nela e digite docker-compose up -d nginx mariadb phpmyadmin
++ Com isso você vai subir três containers em background o que não vai impedir de usar o terminal
++ talvez demore para baixar as imagens depende da sua maquina e sua internete 
++ depois digita docker ps para ver quais containers estão rodando
++ se estiver ok vai no navegador e digita localhost
++ e espro que nesse momento consiga ver a pagina do Laravel
 
 ### Premium Partners
 
