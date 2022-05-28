@@ -21,8 +21,8 @@ pode acessar do seu smartfone no supermercado se caso for este seu objetivo de u
 + Laradock
 + Mysql version  8.0.29
 + Nginx
-## REQUESITOS PARA RODAR ESTE PROJETO no mesmo ambiente que o meu
-
+## REQUESITOS PARA RODAR ESTE PROJETO NO MESMO AMBIENTE QUE O MEU
++ Ubuntu version  20.04
 + Você precisa de ter instalado git
 + Você precisa ter instaldo Laravel 8
 + Você precisa ter instalado Docker version 2010.16
@@ -39,10 +39,10 @@ pode acessar do seu smartfone no supermercado se caso for este seu objetivo de u
 + com isso você vai ter o Laradock dentro do seu projeto
 + Depois disto no terminal ainda dentro da pasta do projeto navegue até a pasta laradock entra nela e  digita cp .env.example .env
 + Esse comando vai fazer uma copia do .env do laradock
-+ Vamos para as configuraçoẽs do .env 
++ Vamos para as configuraçoẽs do .env do Laradock
 + NGINX_HOST_HTTP_PORT=80
 + MARIADB_VERSION=latest
-+ MARIADB_DATABASE=aqui nome do  seu banco de dadoos 
++ MARIADB_DATABASE=aqui nome do  seu banco de dados 
 + MARIADB_USER=senha do usuario
 + MARIADB_PASSWORD= senha
 + MARIADB_PORT=3306 essa porta é padrão 
@@ -53,7 +53,9 @@ pode acessar do seu smartfone no supermercado se caso for este seu objetivo de u
 + ADM_DESIGN=pepa-linha
 + ADM_DEFAULT_SERVER=mysql
 + PMA_DB_ENGINE=mariadb
-+ agora é o .env do projeto Laravel
++ 
+## AGORA CONFIGURAÇÃO DO .ENV DO LARAVEL
++ 
 + DB_CONNECTION=mysql
 + DB_HOST=mariadb
 + DB_PORT=3306
