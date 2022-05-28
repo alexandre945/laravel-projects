@@ -39,7 +39,7 @@ pode acessar do seu smartfone no supermercado se caso for este seu objetivo de u
 + com isso você vai ter o Laradock dentro do seu projeto
 + Depois disto no terminal ainda dentro da pasta do projeto navegue até a pasta laradock entra nela e  digita cp .env.example .env
 + Esse comando vai fazer uma copia do .env do laradock
-+ Vamos para as configuraçoẽs do .env do Laradock
+## CONFIGURAÇÃO DO .ENV DO LARADOCK
 + NGINX_HOST_HTTP_PORT=80
 + MARIADB_VERSION=latest
 + MARIADB_DATABASE=aqui nome do  seu banco de dados 
